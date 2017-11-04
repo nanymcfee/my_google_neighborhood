@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="css/style.css">
+
+   <link rel="stylesheet" href="css/bootstrap-responsive.css">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <h1>Find Your Neighborhood</h1>
+      <div class="row-fluid">
+
+      <div class="options-box span3 sidebar">
+
+        <div>
+          <span>FILTERS: </span><select id="filters"  data-bind="options:filters,value:$root.chosenType">
+          </select>
+
+          <h2>Here are <span data-bind="text:chosenType"></span> around: </h2>
+          <hr>
+
+        </div>
+
+        <div id="spots" class="list-group" data-bind="foreach:locations">
+
+          <button class="list-group-item" type="button"  data-bind="attr:{id:id},text:title
+            ,click:$parent.highlightMarker"></button>
+
+
+        </div>
+      </div>
+      <div class="span9 main" id="map"></div>
+    </div>
+
+    </div>
+    <script src="js/jquery.js"></script>
+    <script src="js/knockout-3.4.2.js"></script>
+    <script src="app-1.js"></script>
+
+    <script async defer
+        src=
+        "https://maps.googleapis.com/maps/api/js?key=AIzaSyCseEuLBwZgD9v2V6OtgNpLf60LQPUzj-s&libraries=geometry,places&v=3&callback=initMap">
+    </script>
+
+  </body>
+</html>
