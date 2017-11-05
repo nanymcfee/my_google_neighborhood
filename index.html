@@ -3,36 +3,43 @@
   <head>
     <link rel="stylesheet" href="css/style.css">
 
-   
+
    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
   <body>
     <div class="container-fluid">
+     <div id="header">
       <h1>Find Your Neighborhood</h1>
-      <div class="row-fluid">
+      <h2>FILTERS: <span>
+      <select id="filters"  data-bind="options:filters,value:$root.chosenType">
+      </select></span></h2>
 
-      <div class="options-box span3 sidebar">
+      <h2>Here are <span data-bind="text:chosenType"></span> around: </h2>
+     </div>
 
-        <div>
-          <span>FILTERS: </span><select id="filters"  data-bind="options:filters,value:$root.chosenType">
-          </select>
+     <nav role="navigation">
+     <div id="menuToggle">
+       <input type="checkbox"/>
 
-          <h2>Here are <span data-bind="text:chosenType"></span> around: </h2>
-          <hr>
-
-        </div>
-
-        <div id="spots" class="list-group" data-bind="foreach:locations">
-
-          <button class="list-group-item" type="button"  data-bind="attr:{id:id},text:title
-            ,click:$parent.highlightMarker"></button>
+       <span></span>
+       <span></span>
+       <span></span>
 
 
-        </div>
+
+
+        <ul id="spots" class="menu" data-bind="foreach:locations">
+
+          <a href="#"><li data-bind="attr:{id:id},text:title
+            ,click:$parent.highlightMarker"></li></a>
+
+
+        </ul>
       </div>
-      <div class="span9 main" id="map"></div>
-    </div>
+      <div id="map"></div>
+    </nav>
+
 
     </div>
     <script src="js/jquery.js"></script>
