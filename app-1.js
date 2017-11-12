@@ -275,7 +275,7 @@ function initMap() {
                 var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=" + loc + '&sort=newest&api-key=4eb556c803c1437a9cf825e50eaac64f';
 
                 $.getJSON(url, function (data) {
-                    if (data.status === "OK") {
+                    if (data.status === "OK"&&data.response.docs.length>0) {
                         var article = data.response.docs[0];
                         //console.log(article);
                         nyNews = '<div><a href=' + article.web_url + '>' + article.headline.main + '</a>' + '<p>' + article.snippet + '</p></div>'; //return the first news about the place
