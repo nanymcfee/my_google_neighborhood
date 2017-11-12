@@ -6,4 +6,4 @@
 5.鼠标划过marker，颜色会发生改变。
 6.使用knockout 管理了筛选出来的的列表信息，以及选择的筛选类型，
 7. 利用JQUERY的getJSON获取了第三方API数据，并且用.error的方式处理获取失败的情况
-8. NYtimes API服务功能不是很稳定，会出现新闻搜索滞后的情况。
+8. 修改了NYtimes API服务功能。
